@@ -21,6 +21,7 @@ class AuthController extends Controller
                 $user = User::findByEmail($email);
                 if ($user && Auth::attempt($user, $password)) {
                     $redirectTo = $_POST['redirect'] ?: self::defaultRoute();
+                    ob_end_clean();
                     $this->redirect($redirectTo);
                 } else {
                     $error = 'Correo o contraseña incorrectos.';
@@ -28,6 +29,7 @@ class AuthController extends Controller
             }
         }
 
+        ob_end_flush();
         $this->render('auth/login', [
             'error' => $error,
             'redirect' => $redirect,
