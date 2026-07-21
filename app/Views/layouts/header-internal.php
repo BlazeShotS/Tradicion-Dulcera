@@ -17,7 +17,7 @@ $relativePath = '/' . trim(str_replace(dirname($_SERVER['SCRIPT_NAME']), '', $cu
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pastelería Artesanal — Intranet</title>
+  <title>Tradicion Dulcera — Intranet</title>
   <?php require __DIR__ . '/../partials/_tailwind-config.php'; ?>
 </head>
 <body>
@@ -37,7 +37,7 @@ $relativePath = '/' . trim(str_replace(dirname($_SERVER['SCRIPT_NAME']), '', $cu
         <div class="flex items-center gap-2">
           <a href="<?= url('/') ?>" class="flex items-center gap-2" aria-label="Ir al inicio">
             <span class="text-2xl font-serif font-bold text-[#2A1B14]" aria-hidden="true">🍰</span>
-            <span class="text-2xl font-serif font-bold text-[#2A1B14]">Pastelería</span>
+            <span class="text-2xl font-serif font-bold text-[#2A1B14]">Tradición Dulcera</span>
             <span class="hidden sm:inline text-sm text-[#C5A059] font-medium">Intranet</span>
           </a>
         </div>

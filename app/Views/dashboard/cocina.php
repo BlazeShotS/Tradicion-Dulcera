@@ -1,21 +1,24 @@
 <?php
 $totalTiempoCocina = array_sum(array_column($comandasCocina, 'tiempo'));
 $promedioCocina = count($comandasCocina) > 0 ? round($totalTiempoCocina / count($comandasCocina)) : 0;
-$ocupacion = min(100, round((count($comandasCocina) / 8) * 100));
+$meta_dia = $meta_dia ?? ($_SESSION['meta_dia'] ?? 60);
+$delivered_today = $delivered_today ?? 0;
+$ocupacion = $ocupacion ?? ($meta_dia > 0 ? min(100, (int) round($delivered_today / $meta_dia * 100)) : 0);
 ?>
 <div class="flex min-h-[calc(100vh-5rem)]">
   <?php require __DIR__ . '/_sidebar.php'; ?>
 
   <div class="w-full lg:w-[80%] p-6 lg:p-10"
-       x-data="cocinaModal()">
-
-    <div class="flex items-center justify-between mb-8">
-      <div class="flex items-center gap-4">
-        <h1 class="text-3xl font-serif font-bold text-[#2A1B14]">Cocina</h1>
-        <span class="bg-[#C5A059]/10 text-[#C5A059] text-sm font-bold px-4 py-1.5 rounded-full"><?= count($comandasCocina) ?> PEDIDOS ACTIVOS</span>
-      </div>
+       x-data="cocinaModal()">    
+    
+    <div class="mb-6">
+      <form method="POST" action="<?= url('/cocina/meta') ?>" class="flex items-center gap-2">
+        <label class="text-sm text-[#2A1B14]/60">Meta del día:</label>
+        <input type="number" name="meta_dia" min="1" value="<?= htmlspecialchars($meta_dia) ?>" class="w-28 px-3 py-2 rounded-lg border border-gray-200" />
+        <button type="submit" class="px-4 py-2 bg-[#C5A059] text-white rounded-lg font-semibold">Guardar</button>
+        <span class="text-sm text-[#2A1B14]/50 ml-4">Entregados hoy: <?= $delivered_today ?> / <?= $meta_dia ?></span>
+      </form>
     </div>
-
     <?php
     $modalObservaciones = false;
     require __DIR__ . '/_modal-confirmacion.php';

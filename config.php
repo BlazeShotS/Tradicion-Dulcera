@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'pasteleria');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'root');
 
 // ─── URL base (se detecta automáticamente: /APF3 o vacío en raíz) ───
 define('BASE_URL', rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'));

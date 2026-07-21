@@ -77,6 +77,16 @@ class HistorialEntrega
         return (int) Database::getConnection()->lastInsertId();
     }
 
+    public static function countToday(): int
+    {
+        $conn = Database::getConnection();
+        $stmt = $conn->query(
+            "SELECT COUNT(*) AS total FROM historial_entregas WHERE DATE(entregado_at) = CURDATE()"
+        );
+        $row = $stmt ? $stmt->fetch() : false;
+        return (int) ($row['total'] ?? 0);
+    }
+
     public static function stats(): array
     {
         try {

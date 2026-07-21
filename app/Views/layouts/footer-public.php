@@ -8,7 +8,7 @@
       <div>
         <a href="<?= url('/') ?>" class="flex items-center gap-2 mb-4 focus:outline-none focus:ring-2 focus:ring-[#C5A059] rounded-lg p-1" aria-label="Ir al inicio">
           <span class="text-3xl" aria-hidden="true">🍰</span>
-          <span class="text-xl font-serif font-bold">Pastelería</span>
+          <span class="text-xl font-serif font-bold">Tradición Dulcera</span>
         </a>
         <p class="text-sm text-[#FDFBF7]/70 mb-6 leading-relaxed">
           Endulzando Lima desde 1924. Tradición, calidad y amor en cada bocado.
@@ -82,7 +82,7 @@
 
     <div class="border-t border-[#FDFBF7]/10 pt-6 text-center">
       <p class="text-sm text-[#FDFBF7]/50">
-        &copy; <?= date('Y') ?> Pastelería Artesanal. Todos los derechos reservados.
+        &copy; <?= date('Y') ?> Tradición Dulcera. Todos los derechos reservados.
       </p>
     </div>
 

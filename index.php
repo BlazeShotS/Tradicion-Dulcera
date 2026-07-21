@@ -39,6 +39,7 @@ $router->get('/panel-mozo', ['PanelMozoController', 'index']);
 $router->post('/panel-mozo/mover', ['PanelMozoController', 'moverPreparacion']);
 $router->get('/cocina', ['CocinaController', 'index']);
 $router->post('/cocina/marcar-listo', ['CocinaController', 'marcarListo']);
+$router->post('/cocina/meta', ['CocinaController', 'setMeta']);
 $router->get('/entregas', ['EntregasController', 'index']);
 $router->post('/entregas/confirmar', ['EntregasController', 'confirmarEntrega']);
 $router->get('/entregas/confirmar', ['EntregasController', 'confirmarEntrega']);

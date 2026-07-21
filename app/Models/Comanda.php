@@ -43,6 +43,15 @@ class Comanda
         return array_map([self::class, 'format'], $stmt->fetchAll());
     }
 
+    public static function countToday(): int
+    {
+        $stmt = Database::getConnection()->query(
+            "SELECT COUNT(*) as total FROM comandas WHERE DATE(created_at) = CURDATE()"
+        );
+        $row = $stmt->fetch();
+        return (int) ($row['total'] ?? 0);
+    }
+
     public static function create(array $data, array $items): int
     {
         $conn = Database::getConnection();
