@@ -18,11 +18,25 @@ class Router
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $base = dirname($_SERVER['SCRIPT_NAME']);
-        $path = '/' . trim(str_replace($base, '', $uri), '/');
+        // Prefer explicit BASE_URL from config.php when available (more reliable in some hosts)
+        $base = defined('BASE_URL') ? BASE_URL : dirname($_SERVER['SCRIPT_NAME']);
+        // Normalize base and uri
+        $base = rtrim($base, '/');
+        $uri = '/' . ltrim($uri, '/');
+        $path = '/' . trim((string) preg_replace('#^' . preg_quote($base, '#') . '#', '', $uri), '/');
 
+        // try exact match
         if (isset($this->routes[$method][$path])) {
             [$controller, $action] = $this->routes[$method][$path];
+            $instance = new $controller();
+            $instance->$action();
+            return;
+        }
+
+        // try with/without trailing slash
+        $altPath = rtrim($path, '/') ?: '/';
+        if (isset($this->routes[$method][$altPath])) {
+            [$controller, $action] = $this->routes[$method][$altPath];
             $instance = new $controller();
             $instance->$action();
             return;
