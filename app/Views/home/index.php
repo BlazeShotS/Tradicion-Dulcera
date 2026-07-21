@@ -32,10 +32,7 @@
 
     <div class="relative flex justify-center">
       <div class="w-full max-w-md aspect-square rounded-2xl bg-gradient-to-br from-[#C5A059]/20 to-[#C5A059]/5 flex items-center justify-center overflow-hidden shadow-2xl">
-        <div class="text-center p-8">
-          <span class="text-9xl">🍫</span>
-          <p class="text-[#2A1B14]/40 font-serif text-lg mt-4">Torta de Chocolate Gourmet</p>
-        </div>
+        <img src="<?= url('/assets/images/ImagenInicio.jpg') ?>" alt="Pastelería Tradición Dulcera" class="w-full h-full object-cover" />
       </div>
     </div>
 
@@ -60,10 +57,7 @@
     </div>
 
     <div class="bg-[#FECD70]/30 rounded-2xl overflow-hidden flex items-center justify-center min-h-[200px] shadow-sm">
-      <div class="text-center p-6">
-        <span class="text-6xl">🧁</span>
-        <p class="text-[#2A1B14]/60 text-sm mt-2 font-medium">Vitrina de dulces artesanales</p>
-      </div>
+      <img src="<?= url('/assets/images/Mision.jfif') ?>" alt="Nuestra misión" class="w-full h-full object-cover" />
     </div>
 
   </div>
@@ -81,11 +75,8 @@
         Ser la pastelería artesanal de referencia en Lima Metropolitana, reconocida por nuestra calidad excepcional, innovación en sabores peruanos y el compromiso con mantener viva la tradición pastelera que heredamos de nuestros abuelos.
       </p>
     </div>
-    <div class="flex-shrink-0 w-full lg:w-64 h-48 rounded-xl bg-gradient-to-br from-[#2A1B14]/10 to-[#C5A059]/20 flex items-center justify-center">
-      <div class="text-center">
-        <span class="text-5xl">👨‍🍳</span>
-        <p class="text-[#2A1B14]/50 text-xs mt-2">Chef pastelero</p>
-      </div>
+    <div class="flex-shrink-0 w-full lg:w-64 h-48 rounded-xl bg-gradient-to-br from-[#2A1B14]/10 to-[#C5A059]/20 flex items-center justify-center overflow-hidden">
+      <img src="<?= url('/assets/images/Vision.jfif') ?>" alt="Nuestra visión" class="w-full h-full object-cover" />
     </div>
   </div>
 

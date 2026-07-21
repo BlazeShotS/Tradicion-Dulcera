@@ -4,11 +4,8 @@
 
     <div class="flex justify-center">
       <div class="bg-white p-6 rounded-2xl shadow-xl rotate-[-3deg] hover:rotate-0 transition-transform duration-500 max-w-sm">
-        <div class="w-72 h-80 rounded-xl bg-gradient-to-br from-[#C5A059]/20 to-[#C5A059]/5 flex items-center justify-center">
-          <div class="text-center">
-            <span class="text-8xl">🧁</span>
-            <p class="text-[#2A1B14]/40 text-sm mt-4 font-serif italic">Repostería artesanal</p>
-          </div>
+        <div class="w-72 h-80 rounded-xl bg-gradient-to-br from-[#C5A059]/20 to-[#C5A059]/5 flex items-center justify-center overflow-hidden">
+          <img src="<?= url('/assets/images/login.avif') ?>" alt="Inicio de sesión pastelería" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>

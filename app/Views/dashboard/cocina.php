@@ -23,7 +23,6 @@ $ocupacion = $ocupacion ?? ($meta_dia > 0 ? min(100, (int) round($delivered_toda
     $modalObservaciones = false;
     require __DIR__ . '/_modal-confirmacion.php';
     ?>
-
     <?php if (count($comandasCocina) > 0): ?>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10" role="list">
       <?php foreach ($comandasCocina as $comanda): ?>

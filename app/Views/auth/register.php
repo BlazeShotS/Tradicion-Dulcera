@@ -7,11 +7,8 @@
         El Legado del<br>
         <span class="text-[#C5A059]">Dulce</span> en tu Mesa
       </h1>
-      <div class="w-full max-w-md mx-auto lg:mx-0 aspect-square rounded-2xl bg-gradient-to-br from-[#C5A059]/20 to-[#FECD70]/10 flex items-center justify-center">
-        <div class="text-center">
-          <span class="text-8xl">🍰</span>
-          <p class="text-[#2A1B14]/40 text-sm mt-4 font-serif">Postres artesanales limeños</p>
-        </div>
+      <div class="w-full max-w-md mx-auto lg:mx-0 aspect-square rounded-2xl bg-gradient-to-br from-[#C5A059]/20 to-[#FECD70]/10 flex items-center justify-center overflow-hidden">
+        <img src="<?= url('/assets/images/registro.avif') ?>" alt="Registro pastelería" class="w-full h-full object-cover" />
       </div>
     </div>
 
